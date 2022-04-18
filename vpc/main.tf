@@ -15,6 +15,10 @@ resource "aws_vpc" "elliotts_aws_sandbox" {
   tags = {
     Name = "elliott_arnold_vpc_sandbox-${random_integer.rand_int.id}"
   }
+
+  lifecycle {
+    create_before_destroy = true
+  }
 }
 
 resource "aws_subnet" "public_subnet" {
@@ -80,4 +84,23 @@ resource "aws_default_route_table" "default_private_rt" {
     Name = "private_route_table"
   }
 
+}
+
+
+resource "aws_security_group" "public_sg" {
+
+  name   = "public_sg"
+  vpc_id = aws_vpc.elliotts_aws_sandbox.id
+  ingress {
+    from_port   = 0
+    to_port     = 0
+    protocol    = "tcp"
+    cidr_blocks = [var.my_ip]
+  }
+  egress {
+    from_port   = 0
+    to_port     = 0
+    protocol    = "-1"
+    cidr_blocks = ["0.0.0.0/0"]
+  }
 }

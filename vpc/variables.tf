@@ -37,3 +37,8 @@ variable "private_subnet_count" {
   type = number
 
 }
+
+variable "my_ip" {
+  type = string
+
+}

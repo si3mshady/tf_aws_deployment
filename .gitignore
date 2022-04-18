@@ -1,10 +1,10 @@
 # Local .terraform directories
 **/.terraform/*
 
-# .tfstate files
+.tfstate files
 *.tfstate
-*.tfstate.*
-.terraform 
+.tfstate.*
+.terraform
 # Crash log files
 crash.log
 crash.*.log
@@ -15,7 +15,7 @@ crash.*.log
 # to change depending on the environment.
 *.tfvars
 *.tfvars.json
-
+tfvars
 # Ignore override files as they are usually used to override resources locally and so
 # are not checked in
 override.tf
@@ -28,19 +28,3 @@ override.tf.json
 
 # Include tfplan files to ignore the plan output of command: terraform plan -out=tfplan
 # example: *tfplan*
-
-# Ignore CLI configuration files
-.terraformrc
-terraform.rc
-© 2022 GitHub, Inc.
-Terms
-Privacy
-Security
-Status
-Docs
-Contact GitHub
-Pricing
-API
-Training
-Blog
-About

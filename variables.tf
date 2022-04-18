@@ -1,11 +1,16 @@
 # vpc main.tf
 variable "vpc_cidr" {
   type    = string
-  default = "10.123.0.0/16"
+  default = "10.128.0.0/16"
 }
 variable "aws_region" {
   type    = string
   default = "us-east-1"
+}
+
+variable "my_ip" {
+  type = string
+
 }
 #
 # variable "public_subnet" {
