@@ -22,3 +22,9 @@ output "public_subnets" {
 output "ecs_arn" {
   value = module.ecs.ecs_metadata_from_module["arn"]
 }
+
+#ALB
+
+output "alb_arn" {
+  value = module.alb.alb_metadata.arn
+}
