@@ -13,3 +13,10 @@ module "vpc" {
   private_subnet_count = var.private_subnet_count
 
 }
+
+module "alb" {
+  source             = "./alb"
+  vpc_id             = module.vpc.elliott_vpc_id
+  alb_public_subnets = module.vpc.vpc_public_subnets
+  alb_public_sg      = module.vpc.elliott_public_sg
+}
