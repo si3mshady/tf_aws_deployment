@@ -23,8 +23,12 @@ output "ecs_arn" {
   value = module.ecs.ecs_metadata_from_module["arn"]
 }
 
-#ALB
+#Kratos Role
+output "iam_role_for_ecs_alb_arn" {
+  value = module.ecs.ecs_kratos_role.arn
+}
 
+#ALB
 output "alb_arn" {
   value = module.alb.alb_metadata.arn
 }

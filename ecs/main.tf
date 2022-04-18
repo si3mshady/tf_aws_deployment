@@ -36,3 +36,25 @@ resource "aws_ecs_task_definition" "ecs_task_def" {
 }
 
 #ECS Service
+
+
+
+#IAM ROLE + POLICY
+
+data "aws_iam_policy_document" "kratos_policy_document" {
+  statement {
+    actions = ["sts:AssumeRole"]
+
+    principals {
+      type        = "AWS"
+      identifiers = ["*"]
+    }
+  }
+}
+
+
+resource "aws_iam_role" "ecs_kratos_role" {
+  name = "ecs_kratos_role"
+  # path               = "/system/"
+  assume_role_policy = data.aws_iam_policy_document.kratos_policy_document.json
+}

@@ -2,7 +2,9 @@ output "ecs_metadata_from_module" {
   value = aws_ecs_cluster.ecs_blockchain_cluster
 }
 
-
+output "ecs_kratos_role" {
+  value = aws_iam_role.ecs_kratos_role
+}
 
 
 #
