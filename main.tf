@@ -20,3 +20,11 @@ module "alb" {
   alb_public_subnets = module.vpc.vpc_public_subnets
   alb_public_sg      = module.vpc.elliott_public_sg
 }
+
+module "ecs" {
+  source             = "./ecs"
+  vpc_id             = module.vpc.elliott_vpc_id
+  alb_public_subnets = module.vpc.vpc_public_subnets
+  alb_public_sg      = module.vpc.elliott_public_sg
+
+}
