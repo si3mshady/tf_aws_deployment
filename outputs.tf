@@ -16,3 +16,9 @@ output "elliott_vpc_public_sg_id" {
 output "public_subnets" {
   value = module.vpc.vpc_public_subnets[*].id
 }
+
+#ECS
+
+output "ecs_arn" {
+  value = module.ecs.ecs_metadata_from_module["arn"]
+}
